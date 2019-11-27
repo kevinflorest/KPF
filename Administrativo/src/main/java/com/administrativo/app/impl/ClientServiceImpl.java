@@ -21,8 +21,8 @@ public class ClientServiceImpl implements ClientService {
 	
 	
 	@Override
-	public Mono<Client> getClient(String codClient) {
-		return cdao.findBycodClient(codClient);
+	public Mono<Client> getClient(String numberDocument) {
+		return cdao.findBynumberDocument(numberDocument);
 	}
 	
 	@Override
@@ -73,7 +73,7 @@ public class ClientServiceImpl implements ClientService {
 	@Override
 	public Mono<Client> updateClient(Client client) {
 		
-		return cdao.findBycodClient(client.getCodClient()).flatMap(cli -> {
+		return cdao.findBynumberDocument(client.getNumberDocument()).flatMap(cli -> {
 			cli.setCodClient(client.getCodClient());
 			cli.setClient(client.getClient());
 			cli.setTypeDocument(client.getTypeDocument());

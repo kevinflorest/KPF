@@ -13,6 +13,6 @@ public interface ClientDAO extends ReactiveMongoRepository<Client, String>{
 	@Query("{'codClient' : { '$in' :?0}}")
 	Flux<Client> findAllBycodClients(String[] codClients);
 	
-	Mono<Client> findBycodClient(String codClient);
+	Mono<Client> findBynumberDocument(String numberDocument);
 
 }

@@ -8,7 +8,7 @@ import reactor.core.publisher.Mono;
 
 public interface ClientService {
 
-	Mono<Client> getClient(String codClient);
+	Mono<Client> getClient(String numberDocument);
 	
 	Flux<Client> getAllClients();
 	
